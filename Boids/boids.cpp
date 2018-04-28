@@ -119,7 +119,7 @@ void display(void)
 void init ()
 {
  // select clearing (background) color
-glClearColor (1.0, 1.0, 1.0, 0.0);
+glClearColor (0.0, 0.0, 0.0, 0.0);
 /*
 
 // initialize viewing values */
