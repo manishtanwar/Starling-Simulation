@@ -1,15 +1,17 @@
 #include "../include/properties.h"
 #include<bits/stdc++.h>
 
-#define cohesion_coeff 50.0
-#define separation_coeff 0.0
-#define alignment_coeff 0.0
+#define cohesion_coeff 3.0
+#define separation_coeff 2.0
+#define alignment_coeff 0.5
 #define inertia_coeff 0.1
-#define boundary_repulsion_coeff 0.000000
+#define boundary_repulsion_coeff 0.8
 #define wall_coeff 50.0
 #define wall_coeff_near 5.0
 #define radius 80.0
 #define no_of_neighbours 15
+// #define radius 150.0
+// #define no_of_neighbours 80
 
 std::vector<int> give_neighbours(int n, std::vector<boid> v)
 {
@@ -89,7 +91,14 @@ tuple calc_boundary_force(boid v)
 
 	tuple avg_velocity;
 	tuple xmi,xmx;
+	int p,q; 
+	
 	xmi = v.position + ( (tuple (Xmin,0,0))*(-1.0));
+	p = rand()%50; q = rand()%50;
+	p = v.velocity.y/abs(v.velocity.y) * p;
+	q = v.velocity.z/abs(v.velocity.z) * q;
+	xmi = xmi + (tuple (0,p,q));
+
 	if(xmi.magnitude() < wall_coeff)
 	avg_velocity = avg_velocity + xmi*(1.0/xmi.magnitude());
 	if(xmi.magnitude() < wall_coeff_near && v.position.x > Xmin)
@@ -97,8 +106,13 @@ tuple calc_boundary_force(boid v)
 	else if(v.position.x < Xmin)
 	avg_velocity = avg_velocity + xmi*(-50.0/xmi.magnitude());
 
-
+	
 	xmx = v.position + ( (tuple (Xmax,0,0))*(-1.0));
+	p = rand()%50; q = rand()%50;
+	p = v.velocity.y/abs(v.velocity.y) * p;
+	q = v.velocity.z/abs(v.velocity.z) * q;
+	xmx = xmx + (tuple (0,p,q));
+
 	if(xmx.magnitude() < wall_coeff)
 	avg_velocity = avg_velocity + xmx*(1.0/xmx.magnitude());
 	if(xmx.magnitude() < wall_coeff_near && v.position.x < Xmax)
@@ -107,7 +121,13 @@ tuple calc_boundary_force(boid v)
 	avg_velocity = avg_velocity + xmx*(-50.0/xmx.magnitude());
 
 	tuple ymi,ymx;
+	
 	ymi = v.position + ( (tuple (0,Ymin,0))*(-1.0));
+	p = rand()%50; q = rand()%50;
+	p = v.velocity.x/abs(v.velocity.x) * p;
+	q = v.velocity.z/abs(v.velocity.z) * q;
+	ymi = ymi + (tuple (p,0,q));
+
 	if(ymi.magnitude() < wall_coeff)
 	avg_velocity = avg_velocity + ymi*(1.0/ymi.magnitude());
 	if(ymi.magnitude() < wall_coeff_near && v.position.y > Ymin)
@@ -116,6 +136,11 @@ tuple calc_boundary_force(boid v)
 	avg_velocity = avg_velocity + ymi*(-50.0/ymi.magnitude());
 
 	ymx = v.position + ( (tuple (0,Ymax,0))*(-1.0));
+	p = rand()%50; q = rand()%50;
+	p = v.velocity.x/abs(v.velocity.x) * p;
+	q = v.velocity.z/abs(v.velocity.z) * q;
+	ymx = ymx + (tuple (p,0,q));
+
 	if(ymx.magnitude() < wall_coeff)
 	avg_velocity = avg_velocity + ymx*(1.0/ymx.magnitude());
 	if(ymx.magnitude() < wall_coeff_near && v.position.y < Ymax)
@@ -125,6 +150,11 @@ tuple calc_boundary_force(boid v)
 
 	tuple zmi,zmx;
 	zmi = v.position + ( (tuple (0,0,Zmin))*(-1.0));
+	p = rand()%50; q = rand()%50;
+	p = v.velocity.x/abs(v.velocity.x) * p;
+	q = v.velocity.y/abs(v.velocity.y) * q;
+	zmi = zmi + (tuple (p,q,0));
+
 	if(zmi.magnitude() < wall_coeff)
 	avg_velocity = avg_velocity + zmi*(1.0/zmi.magnitude());
 	if(zmi.magnitude() < wall_coeff_near && v.position.z > Zmin)
@@ -134,6 +164,11 @@ tuple calc_boundary_force(boid v)
 	
 
 	zmx = v.position + ( (tuple (0,0,Zmax))*(-1.0));
+	p = rand()%50; q = rand()%50;
+	p = v.velocity.x/abs(v.velocity.x) * p;
+	q = v.velocity.y/abs(v.velocity.y) * q;
+	zmx = zmx + (tuple (p,q,0));
+
 	if(zmx.magnitude() < wall_coeff)
 	avg_velocity = avg_velocity + zmx*(1.0/zmx.magnitude());
 	if(zmx.magnitude() < wall_coeff_near && v.position.z < Zmax)

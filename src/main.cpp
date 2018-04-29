@@ -12,7 +12,7 @@ int w=1000,h=1000;
 int ta = 0;
 int qw = 0;
 
-std::vector<boid> v(150);
+std::vector<boid> v(920);
 
 void drawCoordinates()
 {
@@ -87,8 +87,8 @@ void display(void)
     glLineWidth(0.5);
     
     qw++; qw %= freq_pankh;
-    if(qw == 0)
-    ta = 1-ta;
+    // if(qw == 0)
+    // ta = 1-ta;
 
 
     for(int i=0;i< v.size() ;i++)
