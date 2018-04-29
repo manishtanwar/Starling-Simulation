@@ -3,13 +3,16 @@
 
 #include <GL/glut.h>
 #include "../include/boid.h"
+#include "../include/properties.h"
 #include<bits/stdc++.h>
 
 int rotx=0,roty=0,rotz =0;
 float transx = 0,transy = 0,transz = 0,scale = 0.001;
 int w=1000,h=1000;
 int ta = 0;
-boid v[5];
+int qw = 0;
+
+std::vector<boid> v(50);
 
 void drawCoordinates()
 {
@@ -83,7 +86,12 @@ void display(void)
     
     glLineWidth(0.5);
     
-    for(int i=0;i<5;i++)
+    qw++; qw %= freq_pankh;
+    if(qw == 0)
+    ta = 1-ta;
+
+
+    for(int i=0;i< v.size() ;i++)
     {
         // glBegin(GL_POLYGON);
         // v[i].position = v[i].position + v[i].velocity;
@@ -117,9 +125,13 @@ void display(void)
 
         v2 = vel1*(4.0);
         // (5,2,-2) - (6,0,0) = (-1,2,-2)
-        v3 = vel1*(-1.0) + vel2*(2.0) + vel3*(-2.0);
         // (5,-2,-2) - (6,0,0) = (-1,-2,-2)
+        if(ta%2)
+        v3 = vel1*(-1.0) + vel2*(2.0) + vel3*(-2.0),
         v4 = vel1*(-1.0) + vel2*(-2.0) + vel3*(-2.0);
+        else
+        v3 = vel1*(-1.0) + vel2*(2.0) + vel3*(2.0),
+        v4 = vel1*(-1.0) + vel2*(-2.0) + vel3*(2.0);
 
         v2 = v2 + tuple(6,0,0);
         v3 = v3 + tuple(6,0,0);
@@ -129,10 +141,19 @@ void display(void)
         v3 = v3 + v[i].position;
         v4 = v4 + v[i].position;
 
-        v1 = v1*(12);
-        v2 = v2*(12);
-        v3 = v3*(12);
-        v4 = v4*(12);
+        v1 = v1*(0.2);
+        v2 = v2*(0.2);
+        v3 = v3*(0.2);
+        v4 = v4*(0.2);
+        tuple sar;
+        sar = v2*(3.0) + v1;
+        sar = sar * (1.0/4);
+
+        glPushMatrix();
+        glTranslatef(sar.x, sar.y, sar.z);
+        glutSolidSphere(0.1,10,10);
+        glutSolidCone(0.1,0.5,10,10);
+        glPopMatrix();
 
         glBegin(GL_POLYGON);
         glVertex3f(v2.x, v2.y, v2.z);
@@ -257,7 +278,7 @@ void init ()
 
 void go(int a)
 {
-    // changeit();
+    change_it(v);
     glutPostRedisplay();
     glutTimerFunc(100,go,0);
 }

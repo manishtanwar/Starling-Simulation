@@ -1,19 +1,17 @@
 #ifndef BOID_H
 #define BOID_H
 
-#define Xmin -5.0
-#define Xmax 5.0
-#define Ymin -5.0
-#define Ymax 5.0
-#define Zmin -5.0
-#define Zmax 5.0
+#define Xmin -50.0
+#define Xmax 50.0
+#define Ymin -50.0
+#define Ymax 50.0
+#define Zmin -50.0
+#define Zmax 50.0
 
 #define vel_MAX 1.00
 #define vel_MIN -1.00
-#define cohesion_coeff 1.00
-#define separation_coeff 1.00
-#define alignment_coeff 1.00
-#define inertia_coeff 1.00
+#define pb push_back
+#define freq_pankh 3
 
 float random_float(int mi,int mx);
 
