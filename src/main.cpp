@@ -2,12 +2,14 @@
 #include <GL/glu.h>
 
 #include <GL/glut.h>
-// #include <Transform.h>
+#include "../include/boid.h"
+#include<bits/stdc++.h>
 
 int rotx=0,roty=0,rotz =0;
 float transx = 0,transy = 0,transz = 0,scale = 0.001;
 int w=1000,h=1000;
 int ta = 0;
+boid v[5];
 
 void drawCoordinates()
 {
@@ -80,11 +82,65 @@ void display(void)
     glColor3f(1,0,1);
     
     glLineWidth(0.5);
-    glBegin(GL_POLYGON);
-    glVertex3f(5+ta, 5, 0);
-    glVertex3f(5+ta, -5, 0);
-    glVertex3f(10+ta, 0, 0);
-    glEnd();
+    
+    for(int i=0;i<5;i++)
+    {
+        // glBegin(GL_POLYGON);
+        // v[i].position = v[i].position + v[i].velocity;
+        // glVertex3f(10 + v[i].position.x, 0 + v[i].position.y, 0  + v[i].position.z);
+        // glVertex3f(5  + v[i].position.x, 2 + v[i].position.y, -2 + v[i].position.z);
+        // glVertex3f(6  + v[i].position.x, v[i].position.y, 0  + v[i].position.z);
+        // glVertex3f(5  + v[i].position.x, -2 + v[i].position.y, -2 + v[i].position.z);
+        // glEnd();
+        v[i].position = v[i].position + v[i].velocity;
+
+        tuple v1,v2,v3,v4,tmp,vel,vel1,vel2,vel3;
+        vel = v[i].velocity;
+
+        vel.make_it_unit_vector();
+        vel1 = vel;
+
+        if(vel1.z != 0)
+        vel2 = tuple(1,1,0),
+        vel2.z = (-(vel2.x*vel1.x)-(vel2.y*vel1.y))/vel1.z;
+        else if(vel1.y != 0)
+        vel2 = tuple(1,0,1),
+        vel2.y = (-(vel2.x*vel1.x))/vel1.y;
+        else
+        vel2 = tuple(0,1,0);
+        vel2.make_it_unit_vector();
+        vel3 = cross_product(vel1,vel2);
+        vel3.make_it_unit_vector();
+
+        v1 = tuple(6,0,0);
+        v1 = v1 + v[i].position;
+
+        v2 = vel1*(4.0);
+        // (5,2,-2) - (6,0,0) = (-1,2,-2)
+        v3 = vel1*(-1.0) + vel2*(2.0) + vel3*(-2.0);
+        // (5,-2,-2) - (6,0,0) = (-1,-2,-2)
+        v4 = vel1*(-1.0) + vel2*(-2.0) + vel3*(-2.0);
+
+        v2 = v2 + tuple(6,0,0);
+        v3 = v3 + tuple(6,0,0);
+        v4 = v4 + tuple(6,0,0);
+        // std::cout<<v3.x<<' '<<v3.y<<' '<<v3.z<<'\n';
+        v2 = v2 + v[i].position;
+        v3 = v3 + v[i].position;
+        v4 = v4 + v[i].position;
+
+        v1 = v1*(12);
+        v2 = v2*(12);
+        v3 = v3*(12);
+        v4 = v4*(12);
+
+        glBegin(GL_POLYGON);
+        glVertex3f(v2.x, v2.y, v2.z);
+        glVertex3f(v3.x, v3.y, v3.z);
+        glVertex3f(v1.x, v1.y, v1.z);
+        glVertex3f(v4.x, v4.y, v4.z);
+        glEnd();
+    }
 
     drawCoordinates();
     glFlush ();
@@ -102,39 +158,39 @@ void keyboard_action(unsigned char key, int x,int y)
                 glutPostRedisplay();
                 break;
         case 'x' :
-                rotx = (rotx+5)%360;
+                rotx = (rotx+1)%360;
                 glutPostRedisplay();
                 break;
         case 'y' :
-                roty = (roty+5)%360;
+                roty = (roty+1)%360;
                 glutPostRedisplay();
                 break;
         case 'z' :
-                rotz = (rotz+5)%360;
+                rotz = (rotz+1)%360;
                 glutPostRedisplay();
                 break;
         case 'd' :
-                transx = (transx + 5);
+                transx = (transx + 1);
                 glutPostRedisplay();
                 break;
         case 'w' :
-                transy = (transy + 5);
+                transy = (transy + 1);
                 glutPostRedisplay();
                 break;
         case 'e' :
-                transz = (transz + 5);
+                transz = (transz + 1);
                 glutPostRedisplay();
                 break;        
         case 'a' :
-                transx = (transx - 5);
+                transx = (transx - 1);
                 glutPostRedisplay();
                 break;
         case 's' :
-                transy = (transy - 5);
+                transy = (transy - 1);
                 glutPostRedisplay();
                 break;
         case 'q' :
-                transz = (transz - 5);
+                transz = (transz - 1);
                 glutPostRedisplay();
                 break;
 
@@ -142,9 +198,7 @@ void keyboard_action(unsigned char key, int x,int y)
                 break;
     }
 }
-// int amount = 5;
-// const vec3 eye(0.1, 0.1, 0.1);
-// const vec3 up(0.0, 0.0, 1.0);
+
 // Arrow key functionality
 void specialKey_action(int key, int x, int y)
 {
@@ -201,13 +255,16 @@ void init ()
     // glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
 }
 
-void go()
+void go(int a)
 {
-    ta += 1;
+    // changeit();
+    glutPostRedisplay();
+    glutTimerFunc(100,go,0);
 }
 
 int main(int argc, char** argv)
 {
+    std::cout<<v[0].position.x<<' '<<v[0].velocity.x<<'\n';
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize (1000, 1000);
@@ -217,7 +274,9 @@ int main(int argc, char** argv)
     glutDisplayFunc(display);
     glutSpecialFunc(specialKey_action);
     glutKeyboardFunc(keyboard_action);
-    go();
+    
+    go(0);
+    // glutTimerFunc(1000, go, 0);
     glutReshapeFunc(reshape);
     glutReshapeWindow(w, h);
 

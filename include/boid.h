@@ -1,6 +1,22 @@
 #ifndef BOID_H
 #define BOID_H
 
+#define Xmin -5.0
+#define Xmax 5.0
+#define Ymin -5.0
+#define Ymax 5.0
+#define Zmin -5.0
+#define Zmax 5.0
+
+#define vel_MAX 1.00
+#define vel_MIN -1.00
+#define cohesion_coeff 1.00
+#define separation_coeff 1.00
+#define alignment_coeff 1.00
+#define inertia_coeff 1.00
+
+float random_float(int mi,int mx);
+
 /*! \class tuple
     \brief class for a tuple
 */
@@ -22,12 +38,30 @@ class tuple{
         //! bool operator < for vertex_2d
         bool operator < (const tuple& rhs);
 
+        //! bool operator + for vertex_2d
+        tuple operator + (const tuple& rhs);
+
+        //! bool operator + for vertex_2d
+        tuple operator * (const float& rhs);
+
         //! function to shift a tuple wrt to a reference tuple
         /*!
           \param ref_tuple reference tuple chosen as origin
         */
         void shift_it(tuple ref_tuple);
+
+        //! function to return the distance b/w to points
+        float distance(tuple a);
+
+        //! function to return the magnitude of the tuple
+        float magnitude();
+
+        //! function to make it unit vector
+        void make_it_unit_vector();
 };
+
+tuple cross_product(tuple a, tuple b);
+float dot_product(tuple a, tuple b);
 
 /*! \class boid
     \brief class for a boid
@@ -36,13 +70,15 @@ class boid{
     public:
         tuple position; //!< position of the boid
         tuple velocity; //!< velocity of the boid
-        tuple force; //!< force(attraction and repulsion due to neighbours) on the boid
 
         //! Constructor
         boid(tuple position, tuple velocity);
 
         //! Constructor
         boid(tuple position);
+
+        //! Constructor
+        boid();        
 
         // //! bool operator == for vertex_2d
         // bool operator == (const vertex_2d& rhs);
