@@ -1,15 +1,15 @@
 #include "../include/properties.h"
 #include<bits/stdc++.h>
 
-#define cohesion_coeff 0.01
-#define separation_coeff 50.0
-#define alignment_coeff 0.1
+#define cohesion_coeff 50.0
+#define separation_coeff 0.0
+#define alignment_coeff 0.0
 #define inertia_coeff 0.1
-#define boundary_repulsion_coeff 0.05
+#define boundary_repulsion_coeff 0.000000
 #define wall_coeff 50.0
 #define wall_coeff_near 5.0
-#define radius 30.0
-#define no_of_neighbours 6
+#define radius 80.0
+#define no_of_neighbours 15
 
 std::vector<int> give_neighbours(int n, std::vector<boid> v)
 {
@@ -55,7 +55,7 @@ tuple calc_separation(std::vector<int> neighbours, int n, std::vector<boid> v)
 	{
 		tuple ith_position; ith_position = v[z].position; ith_position.shift_it(v[n].position);
 		float ith_mag = -1.0/ith_position.magnitude();
-		avg_position = avg_position + v[z].position*ith_mag;
+		avg_position = avg_position + ith_position*ith_mag;
 	}
 	return avg_position;
 }

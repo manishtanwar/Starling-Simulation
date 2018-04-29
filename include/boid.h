@@ -8,8 +8,8 @@
 #define Zmin -250.0
 #define Zmax 250.0
 
-#define vel_MAX 1.00
-#define vel_MIN -1.00
+#define vel_MAX 10.00
+#define vel_MIN -10.00
 #define pb push_back
 #define freq_pankh 3
 
