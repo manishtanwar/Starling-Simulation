@@ -2,6 +2,7 @@
 #include <GL/glu.h>
 
 #include <GL/glut.h>
+// #include <Transform.h>
 
 
 void drawCoordinates(){
@@ -21,11 +22,11 @@ void drawCoordinates(){
     glVertex3f(0.5, 0.0f, 0.0f);
     glVertex3f(0.45, -0.05f, 0.0f);
 
-    glVertex3f(-0.5, 0.0f, 0.0f);
-    glVertex3f(-0.45, -0.05f, 0.0f);
+    // glVertex3f(-0.5, 0.0f, 0.0f);
+    // glVertex3f(-0.45, -0.05f, 0.0f);
  
-    glVertex3f(-0.5, 0.0f, 0.0f);
-    glVertex3f(-0.45, 0.05f, 0.0f);
+    // glVertex3f(-0.5, 0.0f, 0.0f);
+    // glVertex3f(-0.45, 0.05f, 0.0f);
     glEnd();
     // glFlush();
  
@@ -41,26 +42,32 @@ void drawCoordinates(){
     glVertex3f(0.0, 0.5f, 0.0f);
     glVertex3f(-0.05, 0.45f, 0.0f);
 
-    glVertex3f(0.0, -0.5f, 0.0f);
-    glVertex3f(0.05, -0.45f, 0.0f);
+    // glVertex3f(0.0, -0.5f, 0.0f);
+    // glVertex3f(0.05, -0.45f, 0.0f);
  
-    glVertex3f(0.0, -0.5f, 0.0f);
-    glVertex3f(-0.05, -0.45f, 0.0f);
+    // glVertex3f(0.0, -0.5f, 0.0f);
+    // glVertex3f(-0.05, -0.45f, 0.0f);
     glEnd();
  
     // z 
-    // glColor3f(0.0,0.0,1.0); // blue z
-    // glBegin(GL_LINES);
+    glColor3f(0.0,0.0,1.0); // blue z
+    glBegin(GL_LINES);
+    glVertex3f(0.0, 0.0f ,-0.5f );
+    glVertex3f(0.0, 0.0f ,0.5f );
+ 
+ 
+    glVertex3f(0.0, 0.0f ,0.5f );
+    glVertex3f(0.0, 0.05f ,0.45f );
+ 
+    glVertex3f(0.0, 0.0f ,0.5f );
+    glVertex3f(0.0, -0.05f ,0.45f );
+
     // glVertex3f(0.0, 0.0f ,-0.5f );
-    // glVertex3f(0.0, 0.0f ,0.5f );
+    // glVertex3f(0.0, 0.05f ,-0.45f );
  
- 
-    // glVertex3f(0.0, 0.0f ,0.5f );
-    // glVertex3f(0.0, 1.0f ,0.5f );
- 
-    // glVertex3f(0.0, 0.0f ,0.5f );
-    // glVertex3f(0.0, -1.0f ,0.5f );
-    // glEnd();
+    // glVertex3f(0.0, 0.0f ,-0.5f );
+    // glVertex3f(0.0, -0.05f ,-0.45f );
+    glEnd();
  
 }
 
@@ -96,20 +103,49 @@ void display(void)
   glClear (GL_COLOR_BUFFER_BIT);
   glColor3f (1.0, 1.0, 1.0);
   glLoadIdentity ();
+  
   // glTranslatef(0, 0, -10.0f);
   // glRotatef(rs.cameraX, 1, 0, 0);
   // glRotatef(rs.cameraY, 0, 1, 0);
- 
+ gluLookAt (0.1, 0.1, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
   glScalef (0.3, 0.3, 0.3);
   // glutWireCube (1.0);
   drawCoordinates();
+  // gluLookAt (5.0, 5.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 1.0);
  
   glFlush ();
 
 }
  
 
+void keyboard_action(unsigned char key, int x,int y)
+{
 
+}
+int amount = 5;
+const vec3 eye(0.1, 0.1, 0.1);
+const vec3 up(0.0, 0.0, 1.0);
+// Arrow key functionality
+void specialKey(int key, int x, int y)
+{
+	switch (key)
+	{
+		case 100: //left
+			Transform::left(amount, eye, up);
+			break;
+		case 101: //up
+			Transform::up(amount, eye, up);
+			break;
+		case 102: //right
+			Transform::left(-amount, eye, up);
+			break;
+		case 103: //down
+			Transform::up(-amount, eye, up);
+			break;
+	}
+
+	glutPostRedisplay();
+}
 
 
 
@@ -125,6 +161,7 @@ glClearColor (0.0, 0.0, 0.0, 0.0);
 // initialize viewing values */
 glMatrixMode(GL_MODELVIEW);
 glLoadIdentity();
+
 glOrtho(0.0, 1.0, 0.0, 1.0, -1.0, 1.0);
 }
 /*
@@ -143,6 +180,8 @@ glutInitWindowPosition (50, 50);
 glutCreateWindow ("boids");
 init ();
 glutDisplayFunc(display);
+glutSpecialFunc(specialKey);
+
 
 // void glutSolidSphere(GLdouble 0.5, GLint 1000, GLint 1);
 glutMainLoop();
