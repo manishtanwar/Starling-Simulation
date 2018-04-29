@@ -12,7 +12,7 @@ int w=1000,h=1000;
 int ta = 0;
 int qw = 0;
 
-std::vector<boid> v(50);
+std::vector<boid> v(1050);
 
 void drawCoordinates()
 {
@@ -285,7 +285,6 @@ void go(int a)
 
 int main(int argc, char** argv)
 {
-    std::cout<<v[0].position.x<<' '<<v[0].velocity.x<<'\n';
     glutInit(&argc, argv);
     glutInitDisplayMode (GLUT_SINGLE | GLUT_RGB);
     glutInitWindowSize (1000, 1000);

@@ -1,12 +1,12 @@
 #ifndef BOID_H
 #define BOID_H
 
-#define Xmin -50.0
-#define Xmax 50.0
-#define Ymin -50.0
-#define Ymax 50.0
-#define Zmin -50.0
-#define Zmax 50.0
+#define Xmin -250.0
+#define Xmax 250.0
+#define Ymin -250.0
+#define Ymax 250.0
+#define Zmin -250.0
+#define Zmax 250.0
 
 #define vel_MAX 1.00
 #define vel_MIN -1.00
