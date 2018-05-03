@@ -1,0 +1,26 @@
+var classtuple =
+[
+    [ "tuple", "classtuple.html#aa764946ab904ef453886051dc107e476", null ],
+    [ "tuple", "classtuple.html#ab9871705086ae665b261bfc8b81f73b0", null ],
+    [ "tuple", "classtuple.html#aa764946ab904ef453886051dc107e476", null ],
+    [ "tuple", "classtuple.html#ab9871705086ae665b261bfc8b81f73b0", null ],
+    [ "distance", "classtuple.html#a841aaedd191b831b519d3eb7eeae288c", null ],
+    [ "distance", "classtuple.html#a841aaedd191b831b519d3eb7eeae288c", null ],
+    [ "magnitude", "classtuple.html#ad60cd51bb5c688f7193fe8f9e6c466b4", null ],
+    [ "magnitude", "classtuple.html#ad60cd51bb5c688f7193fe8f9e6c466b4", null ],
+    [ "make_it_unit_vector", "classtuple.html#a9a0dddc69bd8da80d05ff0397dee7f68", null ],
+    [ "make_it_unit_vector", "classtuple.html#a9a0dddc69bd8da80d05ff0397dee7f68", null ],
+    [ "operator*", "classtuple.html#aa475aea27ce5ef5fe97f75243ce1bfd3", null ],
+    [ "operator*", "classtuple.html#aa475aea27ce5ef5fe97f75243ce1bfd3", null ],
+    [ "operator+", "classtuple.html#a828ed2b69e93d38f03d986ea39e10ae6", null ],
+    [ "operator+", "classtuple.html#a828ed2b69e93d38f03d986ea39e10ae6", null ],
+    [ "operator<", "classtuple.html#a121aea0bdaa821cbd870e0de3d161fa3", null ],
+    [ "operator<", "classtuple.html#a121aea0bdaa821cbd870e0de3d161fa3", null ],
+    [ "operator==", "classtuple.html#ab57f6f6b41927094633d0d27206181a6", null ],
+    [ "operator==", "classtuple.html#ab57f6f6b41927094633d0d27206181a6", null ],
+    [ "shift_it", "classtuple.html#a83e59acf101fea3b456df1315b04e4b8", null ],
+    [ "shift_it", "classtuple.html#a83e59acf101fea3b456df1315b04e4b8", null ],
+    [ "x", "classtuple.html#aa2a27c2f1604d90a8d9f8f786238d29a", null ],
+    [ "y", "classtuple.html#a7ca83d8377715732d23975e01bf317ec", null ],
+    [ "z", "classtuple.html#a0d96c11f0004c3682fcfdf9672d9b81d", null ]
+];

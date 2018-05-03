@@ -1,0 +1,250 @@
+\hypertarget{src_2properties_8cpp}{}\section{src/properties.cpp File Reference}
+\label{src_2properties_8cpp}\index{src/properties.\+cpp@{src/properties.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/properties.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\\*
+Include dependency graph for properties.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{src_2properties_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{src_2properties_8cpp_ab16f7f055bbbd643b9510d1bd42eb4dc}{cohesion\+\_\+coeff}~3.\+0
+\item 
+\#define \hyperlink{src_2properties_8cpp_a7f599c3f3ac600fcccbd330b534e48ae}{separation\+\_\+coeff}~2.\+0
+\item 
+\#define \hyperlink{src_2properties_8cpp_a9439746dd157dbb69b93e084d1edfb01}{alignment\+\_\+coeff}~0.\+5
+\item 
+\#define \hyperlink{src_2properties_8cpp_aada98d3e75b15aaf71743634702209b2}{inertia\+\_\+coeff}~0.\+1
+\item 
+\#define \hyperlink{src_2properties_8cpp_a77da7eab1cc4cbb2c82f162c70fbc5c6}{boundary\+\_\+repulsion\+\_\+coeff}~0.\+8
+\item 
+\#define \hyperlink{src_2properties_8cpp_ae3ae4055677d82207f6578facdb0fc9f}{wall\+\_\+coeff}~50.\+0
+\item 
+\#define \hyperlink{src_2properties_8cpp_aa1f49d89b055225bac6ab75db254c1b3}{wall\+\_\+coeff\+\_\+near}~5.\+0
+\item 
+\#define \hyperlink{src_2properties_8cpp_a77e76b711036e5e2fcea28729e200658}{radius}~80.\+0
+\item 
+\#define \hyperlink{src_2properties_8cpp_ae3a4f0027a70e328f9ed18819cb867c7}{no\+\_\+of\+\_\+neighbours}~15
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{src_2properties_8cpp_a8a274a3ed40ef9c3fb2eea8f2f2f8358}{give\+\_\+neighbours} (int n, std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+\hyperlink{classtuple}{tuple} \hyperlink{src_2properties_8cpp_afa110bb08efe1a435060b69cc946076c}{calc\+\_\+cohesive} (std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+\hyperlink{classtuple}{tuple} \hyperlink{src_2properties_8cpp_a50ac6a9e8234630a5ed0b55158cd2e5e}{calc\+\_\+separation} (std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+\hyperlink{classtuple}{tuple} \hyperlink{src_2properties_8cpp_abee90e2e93e750da724975805408daf0}{calc\+\_\+boundary\+\_\+force} (\hyperlink{classboid}{boid} \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+\hyperlink{classtuple}{tuple} \hyperlink{src_2properties_8cpp_a3df27269938df0adf292262c2ea8284d}{calc\+\_\+alignment} (std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+void \hyperlink{src_2properties_8cpp_a0997f2a51d68a3d4a7d8ae247af76cab}{change\+\_\+it} (std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \&\hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{src/properties.\+cpp@{src/properties.\+cpp}!alignment\+\_\+coeff@{alignment\+\_\+coeff}}
+\index{alignment\+\_\+coeff@{alignment\+\_\+coeff}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{alignment\+\_\+coeff}{alignment_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define alignment\+\_\+coeff~0.\+5}\hypertarget{src_2properties_8cpp_a9439746dd157dbb69b93e084d1edfb01}{}\label{src_2properties_8cpp_a9439746dd157dbb69b93e084d1edfb01}
+
+
+Definition at line 6 of file properties.\+cpp.
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!boundary\+\_\+repulsion\+\_\+coeff@{boundary\+\_\+repulsion\+\_\+coeff}}
+\index{boundary\+\_\+repulsion\+\_\+coeff@{boundary\+\_\+repulsion\+\_\+coeff}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{boundary\+\_\+repulsion\+\_\+coeff}{boundary_repulsion_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define boundary\+\_\+repulsion\+\_\+coeff~0.\+8}\hypertarget{src_2properties_8cpp_a77da7eab1cc4cbb2c82f162c70fbc5c6}{}\label{src_2properties_8cpp_a77da7eab1cc4cbb2c82f162c70fbc5c6}
+
+
+Definition at line 8 of file properties.\+cpp.
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!cohesion\+\_\+coeff@{cohesion\+\_\+coeff}}
+\index{cohesion\+\_\+coeff@{cohesion\+\_\+coeff}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{cohesion\+\_\+coeff}{cohesion_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define cohesion\+\_\+coeff~3.\+0}\hypertarget{src_2properties_8cpp_ab16f7f055bbbd643b9510d1bd42eb4dc}{}\label{src_2properties_8cpp_ab16f7f055bbbd643b9510d1bd42eb4dc}
+
+
+Definition at line 4 of file properties.\+cpp.
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!inertia\+\_\+coeff@{inertia\+\_\+coeff}}
+\index{inertia\+\_\+coeff@{inertia\+\_\+coeff}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{inertia\+\_\+coeff}{inertia_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define inertia\+\_\+coeff~0.\+1}\hypertarget{src_2properties_8cpp_aada98d3e75b15aaf71743634702209b2}{}\label{src_2properties_8cpp_aada98d3e75b15aaf71743634702209b2}
+
+
+Definition at line 7 of file properties.\+cpp.
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!no\+\_\+of\+\_\+neighbours@{no\+\_\+of\+\_\+neighbours}}
+\index{no\+\_\+of\+\_\+neighbours@{no\+\_\+of\+\_\+neighbours}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{no\+\_\+of\+\_\+neighbours}{no_of_neighbours}}]{\setlength{\rightskip}{0pt plus 5cm}\#define no\+\_\+of\+\_\+neighbours~15}\hypertarget{src_2properties_8cpp_ae3a4f0027a70e328f9ed18819cb867c7}{}\label{src_2properties_8cpp_ae3a4f0027a70e328f9ed18819cb867c7}
+
+
+Definition at line 12 of file properties.\+cpp.
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!radius@{radius}}
+\index{radius@{radius}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{radius}{radius}}]{\setlength{\rightskip}{0pt plus 5cm}\#define radius~80.\+0}\hypertarget{src_2properties_8cpp_a77e76b711036e5e2fcea28729e200658}{}\label{src_2properties_8cpp_a77e76b711036e5e2fcea28729e200658}
+
+
+Definition at line 11 of file properties.\+cpp.
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!separation\+\_\+coeff@{separation\+\_\+coeff}}
+\index{separation\+\_\+coeff@{separation\+\_\+coeff}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{separation\+\_\+coeff}{separation_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define separation\+\_\+coeff~2.\+0}\hypertarget{src_2properties_8cpp_a7f599c3f3ac600fcccbd330b534e48ae}{}\label{src_2properties_8cpp_a7f599c3f3ac600fcccbd330b534e48ae}
+
+
+Definition at line 5 of file properties.\+cpp.
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!wall\+\_\+coeff@{wall\+\_\+coeff}}
+\index{wall\+\_\+coeff@{wall\+\_\+coeff}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{wall\+\_\+coeff}{wall_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define wall\+\_\+coeff~50.\+0}\hypertarget{src_2properties_8cpp_ae3ae4055677d82207f6578facdb0fc9f}{}\label{src_2properties_8cpp_ae3ae4055677d82207f6578facdb0fc9f}
+
+
+Definition at line 9 of file properties.\+cpp.
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!wall\+\_\+coeff\+\_\+near@{wall\+\_\+coeff\+\_\+near}}
+\index{wall\+\_\+coeff\+\_\+near@{wall\+\_\+coeff\+\_\+near}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{wall\+\_\+coeff\+\_\+near}{wall_coeff_near}}]{\setlength{\rightskip}{0pt plus 5cm}\#define wall\+\_\+coeff\+\_\+near~5.\+0}\hypertarget{src_2properties_8cpp_aa1f49d89b055225bac6ab75db254c1b3}{}\label{src_2properties_8cpp_aa1f49d89b055225bac6ab75db254c1b3}
+
+
+Definition at line 10 of file properties.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{src/properties.\+cpp@{src/properties.\+cpp}!calc\+\_\+alignment@{calc\+\_\+alignment}}
+\index{calc\+\_\+alignment@{calc\+\_\+alignment}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{calc\+\_\+alignment(std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ boid $>$ v)}{calc_alignment(std::vector< int > neighbours, int n, std::vector< boid > v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tuple} calc\+\_\+alignment (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ int $>$}]{neighbours, }
+\item[{int}]{n, }
+\item[{std\+::vector$<$ {\bf boid} $>$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2properties_8cpp_a3df27269938df0adf292262c2ea8284d}{}\label{src_2properties_8cpp_a3df27269938df0adf292262c2ea8284d}
+
+
+Definition at line 182 of file properties.\+cpp.
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!calc\+\_\+boundary\+\_\+force@{calc\+\_\+boundary\+\_\+force}}
+\index{calc\+\_\+boundary\+\_\+force@{calc\+\_\+boundary\+\_\+force}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{calc\+\_\+boundary\+\_\+force(boid v)}{calc_boundary_force(boid v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tuple} calc\+\_\+boundary\+\_\+force (
+\begin{DoxyParamCaption}
+\item[{{\bf boid}}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2properties_8cpp_abee90e2e93e750da724975805408daf0}{}\label{src_2properties_8cpp_abee90e2e93e750da724975805408daf0}
+
+
+Definition at line 65 of file properties.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{src_2properties_8cpp_abee90e2e93e750da724975805408daf0_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!calc\+\_\+cohesive@{calc\+\_\+cohesive}}
+\index{calc\+\_\+cohesive@{calc\+\_\+cohesive}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{calc\+\_\+cohesive(std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ boid $>$ v)}{calc_cohesive(std::vector< int > neighbours, int n, std::vector< boid > v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tuple} calc\+\_\+cohesive (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ int $>$}]{neighbours, }
+\item[{int}]{n, }
+\item[{std\+::vector$<$ {\bf boid} $>$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2properties_8cpp_afa110bb08efe1a435060b69cc946076c}{}\label{src_2properties_8cpp_afa110bb08efe1a435060b69cc946076c}
+
+
+Definition at line 37 of file properties.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{src_2properties_8cpp_afa110bb08efe1a435060b69cc946076c_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!calc\+\_\+separation@{calc\+\_\+separation}}
+\index{calc\+\_\+separation@{calc\+\_\+separation}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{calc\+\_\+separation(std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ boid $>$ v)}{calc_separation(std::vector< int > neighbours, int n, std::vector< boid > v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tuple} calc\+\_\+separation (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ int $>$}]{neighbours, }
+\item[{int}]{n, }
+\item[{std\+::vector$<$ {\bf boid} $>$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2properties_8cpp_a50ac6a9e8234630a5ed0b55158cd2e5e}{}\label{src_2properties_8cpp_a50ac6a9e8234630a5ed0b55158cd2e5e}
+
+
+Definition at line 51 of file properties.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{src_2properties_8cpp_a50ac6a9e8234630a5ed0b55158cd2e5e_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!change\+\_\+it@{change\+\_\+it}}
+\index{change\+\_\+it@{change\+\_\+it}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{change\+\_\+it(std\+::vector$<$ boid $>$ \&v)}{change_it(std::vector< boid > &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void change\+\_\+it (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf boid} $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2properties_8cpp_a0997f2a51d68a3d4a7d8ae247af76cab}{}\label{src_2properties_8cpp_a0997f2a51d68a3d4a7d8ae247af76cab}
+
+
+Definition at line 195 of file properties.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{src_2properties_8cpp_a0997f2a51d68a3d4a7d8ae247af76cab_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=278pt]{src_2properties_8cpp_a0997f2a51d68a3d4a7d8ae247af76cab_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{src/properties.\+cpp@{src/properties.\+cpp}!give\+\_\+neighbours@{give\+\_\+neighbours}}
+\index{give\+\_\+neighbours@{give\+\_\+neighbours}!src/properties.\+cpp@{src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{give\+\_\+neighbours(int n, std\+::vector$<$ boid $>$ v)}{give_neighbours(int n, std::vector< boid > v)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ give\+\_\+neighbours (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{std\+::vector$<$ {\bf boid} $>$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2properties_8cpp_a8a274a3ed40ef9c3fb2eea8f2f2f8358}{}\label{src_2properties_8cpp_a8a274a3ed40ef9c3fb2eea8f2f2f8358}
+
+
+Definition at line 16 of file properties.\+cpp.
+

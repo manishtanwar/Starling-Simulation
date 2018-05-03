@@ -1,0 +1,333 @@
+\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp}{}\section{Parametric/\+Starling-\/\+Simulation/src/properties.cpp File Reference}
+\label{_parametric_2_starling-_simulation_2src_2properties_8cpp}\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+{\ttfamily \#include \char`\"{}../include/properties.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\\*
+Include dependency graph for properties.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_ab53328405fd9ba89990d9426d0e6389e}{eps}~0.\+000001
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_ab16f7f055bbbd643b9510d1bd42eb4dc}{cohesion\+\_\+coeff}~3.\+0
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_a7f599c3f3ac600fcccbd330b534e48ae}{separation\+\_\+coeff}~2.\+0
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_a9439746dd157dbb69b93e084d1edfb01}{alignment\+\_\+coeff}~0.\+5
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_aada98d3e75b15aaf71743634702209b2}{inertia\+\_\+coeff}~0.\+1
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_a77da7eab1cc4cbb2c82f162c70fbc5c6}{boundary\+\_\+repulsion\+\_\+coeff}~0.\+8
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_ae3ae4055677d82207f6578facdb0fc9f}{wall\+\_\+coeff}~50.\+0
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_aa1f49d89b055225bac6ab75db254c1b3}{wall\+\_\+coeff\+\_\+near}~5.\+0
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_a77e76b711036e5e2fcea28729e200658}{radius}~80.\+0
+\item 
+\#define \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_ae3a4f0027a70e328f9ed18819cb867c7}{no\+\_\+of\+\_\+neighbours}~15
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ int $>$ \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_a8a274a3ed40ef9c3fb2eea8f2f2f8358}{give\+\_\+neighbours} (int n, std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+\hyperlink{classtuple}{tuple} \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_afa110bb08efe1a435060b69cc946076c}{calc\+\_\+cohesive} (std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+\hyperlink{classtuple}{tuple} \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_a50ac6a9e8234630a5ed0b55158cd2e5e}{calc\+\_\+separation} (std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+\hyperlink{classtuple}{tuple} \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_abee90e2e93e750da724975805408daf0}{calc\+\_\+boundary\+\_\+force} (\hyperlink{classboid}{boid} \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+\hyperlink{classtuple}{tuple} \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_a3df27269938df0adf292262c2ea8284d}{calc\+\_\+alignment} (std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\item 
+bool \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_a7710f08e0d0c5ec292c8527e64d91813}{compare\+\_\+boids} (\hyperlink{classboid}{boid} lhs, \hyperlink{classboid}{boid} rhs)
+\item 
+void \hyperlink{_parametric_2_starling-_simulation_2src_2properties_8cpp_a0997f2a51d68a3d4a7d8ae247af76cab}{change\+\_\+it} (std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \&\hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v})
+\end{DoxyCompactItemize}
+
+
+\subsection{Macro Definition Documentation}
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!alignment\+\_\+coeff@{alignment\+\_\+coeff}}
+\index{alignment\+\_\+coeff@{alignment\+\_\+coeff}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{alignment\+\_\+coeff}{alignment_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define alignment\+\_\+coeff~0.\+5}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_a9439746dd157dbb69b93e084d1edfb01}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_a9439746dd157dbb69b93e084d1edfb01}
+
+
+Definition at line 8 of file properties.\+cpp.
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!boundary\+\_\+repulsion\+\_\+coeff@{boundary\+\_\+repulsion\+\_\+coeff}}
+\index{boundary\+\_\+repulsion\+\_\+coeff@{boundary\+\_\+repulsion\+\_\+coeff}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{boundary\+\_\+repulsion\+\_\+coeff}{boundary_repulsion_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define boundary\+\_\+repulsion\+\_\+coeff~0.\+8}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_a77da7eab1cc4cbb2c82f162c70fbc5c6}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_a77da7eab1cc4cbb2c82f162c70fbc5c6}
+
+
+Definition at line 10 of file properties.\+cpp.
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!cohesion\+\_\+coeff@{cohesion\+\_\+coeff}}
+\index{cohesion\+\_\+coeff@{cohesion\+\_\+coeff}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{cohesion\+\_\+coeff}{cohesion_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define cohesion\+\_\+coeff~3.\+0}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_ab16f7f055bbbd643b9510d1bd42eb4dc}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_ab16f7f055bbbd643b9510d1bd42eb4dc}
+
+
+Definition at line 6 of file properties.\+cpp.
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!eps@{eps}}
+\index{eps@{eps}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{eps}{eps}}]{\setlength{\rightskip}{0pt plus 5cm}\#define eps~0.\+000001}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_ab53328405fd9ba89990d9426d0e6389e}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_ab53328405fd9ba89990d9426d0e6389e}
+
+
+Definition at line 4 of file properties.\+cpp.
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!inertia\+\_\+coeff@{inertia\+\_\+coeff}}
+\index{inertia\+\_\+coeff@{inertia\+\_\+coeff}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{inertia\+\_\+coeff}{inertia_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define inertia\+\_\+coeff~0.\+1}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_aada98d3e75b15aaf71743634702209b2}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_aada98d3e75b15aaf71743634702209b2}
+
+
+Definition at line 9 of file properties.\+cpp.
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!no\+\_\+of\+\_\+neighbours@{no\+\_\+of\+\_\+neighbours}}
+\index{no\+\_\+of\+\_\+neighbours@{no\+\_\+of\+\_\+neighbours}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{no\+\_\+of\+\_\+neighbours}{no_of_neighbours}}]{\setlength{\rightskip}{0pt plus 5cm}\#define no\+\_\+of\+\_\+neighbours~15}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_ae3a4f0027a70e328f9ed18819cb867c7}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_ae3a4f0027a70e328f9ed18819cb867c7}
+
+
+Definition at line 14 of file properties.\+cpp.
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!radius@{radius}}
+\index{radius@{radius}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{radius}{radius}}]{\setlength{\rightskip}{0pt plus 5cm}\#define radius~80.\+0}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_a77e76b711036e5e2fcea28729e200658}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_a77e76b711036e5e2fcea28729e200658}
+
+
+Definition at line 13 of file properties.\+cpp.
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!separation\+\_\+coeff@{separation\+\_\+coeff}}
+\index{separation\+\_\+coeff@{separation\+\_\+coeff}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{separation\+\_\+coeff}{separation_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define separation\+\_\+coeff~2.\+0}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_a7f599c3f3ac600fcccbd330b534e48ae}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_a7f599c3f3ac600fcccbd330b534e48ae}
+
+
+Definition at line 7 of file properties.\+cpp.
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!wall\+\_\+coeff@{wall\+\_\+coeff}}
+\index{wall\+\_\+coeff@{wall\+\_\+coeff}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{wall\+\_\+coeff}{wall_coeff}}]{\setlength{\rightskip}{0pt plus 5cm}\#define wall\+\_\+coeff~50.\+0}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_ae3ae4055677d82207f6578facdb0fc9f}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_ae3ae4055677d82207f6578facdb0fc9f}
+
+
+Definition at line 11 of file properties.\+cpp.
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!wall\+\_\+coeff\+\_\+near@{wall\+\_\+coeff\+\_\+near}}
+\index{wall\+\_\+coeff\+\_\+near@{wall\+\_\+coeff\+\_\+near}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{wall\+\_\+coeff\+\_\+near}{wall_coeff_near}}]{\setlength{\rightskip}{0pt plus 5cm}\#define wall\+\_\+coeff\+\_\+near~5.\+0}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_aa1f49d89b055225bac6ab75db254c1b3}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_aa1f49d89b055225bac6ab75db254c1b3}
+
+
+Definition at line 12 of file properties.\+cpp.
+
+
+
+\subsection{Function Documentation}
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!calc\+\_\+alignment@{calc\+\_\+alignment}}
+\index{calc\+\_\+alignment@{calc\+\_\+alignment}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{calc\+\_\+alignment(std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ boid $>$ v)}{calc_alignment(std::vector< int > neighbours, int n, std::vector< boid > v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tuple} calc\+\_\+alignment (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ int $>$}]{neighbours, }
+\item[{int}]{n, }
+\item[{std\+::vector$<$ {\bf boid} $>$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_a3df27269938df0adf292262c2ea8284d}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_a3df27269938df0adf292262c2ea8284d}
+
+
+Definition at line 184 of file properties.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=257pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_a3df27269938df0adf292262c2ea8284d_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!calc\+\_\+boundary\+\_\+force@{calc\+\_\+boundary\+\_\+force}}
+\index{calc\+\_\+boundary\+\_\+force@{calc\+\_\+boundary\+\_\+force}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{calc\+\_\+boundary\+\_\+force(boid v)}{calc_boundary_force(boid v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tuple} calc\+\_\+boundary\+\_\+force (
+\begin{DoxyParamCaption}
+\item[{{\bf boid}}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_abee90e2e93e750da724975805408daf0}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_abee90e2e93e750da724975805408daf0}
+
+
+Definition at line 67 of file properties.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_abee90e2e93e750da724975805408daf0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=282pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_abee90e2e93e750da724975805408daf0_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!calc\+\_\+cohesive@{calc\+\_\+cohesive}}
+\index{calc\+\_\+cohesive@{calc\+\_\+cohesive}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{calc\+\_\+cohesive(std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ boid $>$ v)}{calc_cohesive(std::vector< int > neighbours, int n, std::vector< boid > v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tuple} calc\+\_\+cohesive (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ int $>$}]{neighbours, }
+\item[{int}]{n, }
+\item[{std\+::vector$<$ {\bf boid} $>$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_afa110bb08efe1a435060b69cc946076c}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_afa110bb08efe1a435060b69cc946076c}
+
+
+Definition at line 39 of file properties.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_afa110bb08efe1a435060b69cc946076c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=254pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_afa110bb08efe1a435060b69cc946076c_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!calc\+\_\+separation@{calc\+\_\+separation}}
+\index{calc\+\_\+separation@{calc\+\_\+separation}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{calc\+\_\+separation(std\+::vector$<$ int $>$ neighbours, int n, std\+::vector$<$ boid $>$ v)}{calc_separation(std::vector< int > neighbours, int n, std::vector< boid > v)}}]{\setlength{\rightskip}{0pt plus 5cm}{\bf tuple} calc\+\_\+separation (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ int $>$}]{neighbours, }
+\item[{int}]{n, }
+\item[{std\+::vector$<$ {\bf boid} $>$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_a50ac6a9e8234630a5ed0b55158cd2e5e}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_a50ac6a9e8234630a5ed0b55158cd2e5e}
+
+
+Definition at line 53 of file properties.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_a50ac6a9e8234630a5ed0b55158cd2e5e_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=260pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_a50ac6a9e8234630a5ed0b55158cd2e5e_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!change\+\_\+it@{change\+\_\+it}}
+\index{change\+\_\+it@{change\+\_\+it}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{change\+\_\+it(std\+::vector$<$ boid $>$ \&v)}{change_it(std::vector< boid > &v)}}]{\setlength{\rightskip}{0pt plus 5cm}void change\+\_\+it (
+\begin{DoxyParamCaption}
+\item[{std\+::vector$<$ {\bf boid} $>$ \&}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_a0997f2a51d68a3d4a7d8ae247af76cab}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_a0997f2a51d68a3d4a7d8ae247af76cab}
+
+
+Definition at line 208 of file properties.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_a0997f2a51d68a3d4a7d8ae247af76cab_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!compare\+\_\+boids@{compare\+\_\+boids}}
+\index{compare\+\_\+boids@{compare\+\_\+boids}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{compare\+\_\+boids(boid lhs, boid rhs)}{compare_boids(boid lhs, boid rhs)}}]{\setlength{\rightskip}{0pt plus 5cm}bool compare\+\_\+boids (
+\begin{DoxyParamCaption}
+\item[{{\bf boid}}]{lhs, }
+\item[{{\bf boid}}]{rhs}
+\end{DoxyParamCaption}
+)}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_a7710f08e0d0c5ec292c8527e64d91813}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_a7710f08e0d0c5ec292c8527e64d91813}
+
+
+Definition at line 197 of file properties.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=258pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_a7710f08e0d0c5ec292c8527e64d91813_icgraph}
+\end{center}
+\end{figure}
+
+
+\index{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}!give\+\_\+neighbours@{give\+\_\+neighbours}}
+\index{give\+\_\+neighbours@{give\+\_\+neighbours}!Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp@{Parametric/\+Starling-\/\+Simulation/src/properties.\+cpp}}
+\subsubsection[{\texorpdfstring{give\+\_\+neighbours(int n, std\+::vector$<$ boid $>$ v)}{give_neighbours(int n, std::vector< boid > v)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<$int$>$ give\+\_\+neighbours (
+\begin{DoxyParamCaption}
+\item[{int}]{n, }
+\item[{std\+::vector$<$ {\bf boid} $>$}]{v}
+\end{DoxyParamCaption}
+)}\hypertarget{_parametric_2_starling-_simulation_2src_2properties_8cpp_a8a274a3ed40ef9c3fb2eea8f2f2f8358}{}\label{_parametric_2_starling-_simulation_2src_2properties_8cpp_a8a274a3ed40ef9c3fb2eea8f2f2f8358}
+
+
+Definition at line 18 of file properties.\+cpp.
+
+
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{_parametric_2_starling-_simulation_2src_2properties_8cpp_a8a274a3ed40ef9c3fb2eea8f2f2f8358_icgraph}
+\end{center}
+\end{figure}
+
+

@@ -15,6 +15,18 @@
 
 float random_float(int mi,int mx);
 
+/*! \mainpage COP290 - Starling Simulation - Documentation
+ *
+ * \section intro_sec INTRODUCTION
+ *
+ * This project is to model and simulate starling murmuration. Objective of this project
+ * isto measure from a realistic simulation the average energy spent by each bird, the angular
+ * momentum and the force that each bird has to withstand in a typical flight ritual. Starling
+ * birds follow number of rules or patterns while foraging. Flocking behavior is one of the most
+ * important characteristics shown by starling birds.
+ 
+ */
+
 /*! \class tuple
     \brief class for a tuple
 */

@@ -12,7 +12,7 @@ int w=1000,h=1000;
 int ta = 0;
 int qw = 0;
 
-std::vector<boid> v(920);
+std::vector<boid> v(20);
 
 void drawCoordinates()
 {

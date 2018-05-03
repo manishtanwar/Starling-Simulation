@@ -1,0 +1,282 @@
+\hypertarget{src_2main_8cpp}{}\section{src/main.cpp File Reference}
+\label{src_2main_8cpp}\index{src/main.\+cpp@{src/main.\+cpp}}
+{\ttfamily \#include $<$G\+L/gl.\+h$>$}\\*
+{\ttfamily \#include $<$G\+L/glu.\+h$>$}\\*
+{\ttfamily \#include $<$G\+L/glut.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}../include/boid.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}../include/properties.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$bits/stdc++.\+h$>$}\\*
+Include dependency graph for main.\+cpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{src_2main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ \hyperlink{classboid}{boid} $>$ \hyperlink{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{v} (20)
+\item 
+void \hyperlink{src_2main_8cpp_a55d7e9aa910e339fa9eb7738680da6f5}{draw\+Coordinates} ()
+\item 
+void \hyperlink{src_2main_8cpp_a4ea013001a5fb47853d0fab8f8de35cd}{display} (void)
+\item 
+void \hyperlink{src_2main_8cpp_ae5474f3b746ffe82a9ec7693554a5258}{keyboard\+\_\+action} (unsigned char key, int x, int y)
+\item 
+void \hyperlink{src_2main_8cpp_a636e30ede2e55a392966309502eccc56}{special\+Key\+\_\+action} (int key, int x, int y)
+\item 
+void \hyperlink{src_2main_8cpp_a6819355374dd277347abd7c4235f0cd7}{reshape} (int width, int height)
+\item 
+void \hyperlink{src_2main_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{init} ()
+\item 
+void \hyperlink{src_2main_8cpp_a31dc0f9d2e8cd7c620bacd665dc49d46}{go} (int a)
+\item 
+int \hyperlink{src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{main} (int argc, char $\ast$$\ast$argv)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{src_2main_8cpp_ad9c7d34825651b28bdc55791ccfcf181}{rotx} =0
+\item 
+int \hyperlink{src_2main_8cpp_ab2fea5bf4c66da361835e03607870663}{roty} =0
+\item 
+int \hyperlink{src_2main_8cpp_aa47685950c49cd1ee518f5581367e231}{rotz} =0
+\item 
+float \hyperlink{src_2main_8cpp_a15b95adbbd613e2d9fde8dbebe324811}{transx} = 0
+\item 
+float \hyperlink{src_2main_8cpp_a9903321d40b0ea39b3eb992b0ef716ee}{transy} = 0
+\item 
+float \hyperlink{src_2main_8cpp_af3eff2bceab47fbaf2707aba16c9355b}{transz} = 0
+\item 
+float \hyperlink{src_2main_8cpp_a1d28dec57cce925ad92342891bd71e7c}{scale} = 0.\+001
+\item 
+int \hyperlink{src_2main_8cpp_aac374e320caaadeca4874add33b62af2}{w} =1000
+\item 
+int \hyperlink{src_2main_8cpp_a16611451551e3d15916bae723c3f59f7}{h} =1000
+\item 
+int \hyperlink{src_2main_8cpp_aff6586d08509fda8099d68aa8b4ae891}{ta} = 0
+\item 
+int \hyperlink{src_2main_8cpp_a15c345fe9f305bd944060d6a5820ab55}{qw} = 0
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{src/main.\+cpp@{src/main.\+cpp}!display@{display}}
+\index{display@{display}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{display(void)}{display(void)}}]{\setlength{\rightskip}{0pt plus 5cm}void display (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2main_8cpp_a4ea013001a5fb47853d0fab8f8de35cd}{}\label{src_2main_8cpp_a4ea013001a5fb47853d0fab8f8de35cd}
+
+
+Definition at line 68 of file main.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{src_2main_8cpp_a4ea013001a5fb47853d0fab8f8de35cd_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{src/main.\+cpp@{src/main.\+cpp}!draw\+Coordinates@{draw\+Coordinates}}
+\index{draw\+Coordinates@{draw\+Coordinates}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{draw\+Coordinates()}{drawCoordinates()}}]{\setlength{\rightskip}{0pt plus 5cm}void draw\+Coordinates (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2main_8cpp_a55d7e9aa910e339fa9eb7738680da6f5}{}\label{src_2main_8cpp_a55d7e9aa910e339fa9eb7738680da6f5}
+
+
+Definition at line 17 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!go@{go}}
+\index{go@{go}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{go(int a)}{go(int a)}}]{\setlength{\rightskip}{0pt plus 5cm}void go (
+\begin{DoxyParamCaption}
+\item[{int}]{a}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2main_8cpp_a31dc0f9d2e8cd7c620bacd665dc49d46}{}\label{src_2main_8cpp_a31dc0f9d2e8cd7c620bacd665dc49d46}
+
+
+Definition at line 279 of file main.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{src_2main_8cpp_a31dc0f9d2e8cd7c620bacd665dc49d46_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{src/main.\+cpp@{src/main.\+cpp}!init@{init}}
+\index{init@{init}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{init()}{init()}}]{\setlength{\rightskip}{0pt plus 5cm}void init (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2main_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}{}\label{src_2main_8cpp_a02fd73d861ef2e4aabb38c0c9ff82947}
+
+
+Definition at line 258 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!keyboard\+\_\+action@{keyboard\+\_\+action}}
+\index{keyboard\+\_\+action@{keyboard\+\_\+action}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{keyboard\+\_\+action(unsigned char key, int x, int y)}{keyboard_action(unsigned char key, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void keyboard\+\_\+action (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{key, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2main_8cpp_ae5474f3b746ffe82a9ec7693554a5258}{}\label{src_2main_8cpp_ae5474f3b746ffe82a9ec7693554a5258}
+
+
+Definition at line 171 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!main@{main}}
+\index{main@{main}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{main(int argc, char $\ast$$\ast$argv)}{main(int argc, char **argv)}}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+\item[{int}]{argc, }
+\item[{char $\ast$$\ast$}]{argv}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}{}\label{src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627}
+
+
+Definition at line 286 of file main.\+cpp.
+
+
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{src_2main_8cpp_a3c04138a5bfe5d72780bb7e82a18e627_cgraph}
+\end{center}
+\end{figure}
+
+
+\index{src/main.\+cpp@{src/main.\+cpp}!reshape@{reshape}}
+\index{reshape@{reshape}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{reshape(int width, int height)}{reshape(int width, int height)}}]{\setlength{\rightskip}{0pt plus 5cm}void reshape (
+\begin{DoxyParamCaption}
+\item[{int}]{width, }
+\item[{int}]{height}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2main_8cpp_a6819355374dd277347abd7c4235f0cd7}{}\label{src_2main_8cpp_a6819355374dd277347abd7c4235f0cd7}
+
+
+Definition at line 239 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!special\+Key\+\_\+action@{special\+Key\+\_\+action}}
+\index{special\+Key\+\_\+action@{special\+Key\+\_\+action}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{special\+Key\+\_\+action(int key, int x, int y)}{specialKey_action(int key, int x, int y)}}]{\setlength{\rightskip}{0pt plus 5cm}void special\+Key\+\_\+action (
+\begin{DoxyParamCaption}
+\item[{int}]{key, }
+\item[{int}]{x, }
+\item[{int}]{y}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2main_8cpp_a636e30ede2e55a392966309502eccc56}{}\label{src_2main_8cpp_a636e30ede2e55a392966309502eccc56}
+
+
+Definition at line 224 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!v@{v}}
+\index{v@{v}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{v(20)}{v(20)}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::vector$<${\bf boid}$>$ v (
+\begin{DoxyParamCaption}
+\item[{20}]{}
+\end{DoxyParamCaption}
+)}\hypertarget{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}{}\label{src_2main_8cpp_a1d5a718f1d6b42141bc3a6834be5e420}
+
+
+\subsection{Variable Documentation}
+\index{src/main.\+cpp@{src/main.\+cpp}!h@{h}}
+\index{h@{h}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{h}{h}}]{\setlength{\rightskip}{0pt plus 5cm}int h =1000}\hypertarget{src_2main_8cpp_a16611451551e3d15916bae723c3f59f7}{}\label{src_2main_8cpp_a16611451551e3d15916bae723c3f59f7}
+
+
+Definition at line 11 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!qw@{qw}}
+\index{qw@{qw}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{qw}{qw}}]{\setlength{\rightskip}{0pt plus 5cm}int qw = 0}\hypertarget{src_2main_8cpp_a15c345fe9f305bd944060d6a5820ab55}{}\label{src_2main_8cpp_a15c345fe9f305bd944060d6a5820ab55}
+
+
+Definition at line 13 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!rotx@{rotx}}
+\index{rotx@{rotx}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{rotx}{rotx}}]{\setlength{\rightskip}{0pt plus 5cm}int rotx =0}\hypertarget{src_2main_8cpp_ad9c7d34825651b28bdc55791ccfcf181}{}\label{src_2main_8cpp_ad9c7d34825651b28bdc55791ccfcf181}
+
+
+Definition at line 9 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!roty@{roty}}
+\index{roty@{roty}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{roty}{roty}}]{\setlength{\rightskip}{0pt plus 5cm}int roty =0}\hypertarget{src_2main_8cpp_ab2fea5bf4c66da361835e03607870663}{}\label{src_2main_8cpp_ab2fea5bf4c66da361835e03607870663}
+
+
+Definition at line 9 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!rotz@{rotz}}
+\index{rotz@{rotz}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{rotz}{rotz}}]{\setlength{\rightskip}{0pt plus 5cm}int rotz =0}\hypertarget{src_2main_8cpp_aa47685950c49cd1ee518f5581367e231}{}\label{src_2main_8cpp_aa47685950c49cd1ee518f5581367e231}
+
+
+Definition at line 9 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!scale@{scale}}
+\index{scale@{scale}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{scale}{scale}}]{\setlength{\rightskip}{0pt plus 5cm}float scale = 0.\+001}\hypertarget{src_2main_8cpp_a1d28dec57cce925ad92342891bd71e7c}{}\label{src_2main_8cpp_a1d28dec57cce925ad92342891bd71e7c}
+
+
+Definition at line 10 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!ta@{ta}}
+\index{ta@{ta}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{ta}{ta}}]{\setlength{\rightskip}{0pt plus 5cm}int ta = 0}\hypertarget{src_2main_8cpp_aff6586d08509fda8099d68aa8b4ae891}{}\label{src_2main_8cpp_aff6586d08509fda8099d68aa8b4ae891}
+
+
+Definition at line 12 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!transx@{transx}}
+\index{transx@{transx}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{transx}{transx}}]{\setlength{\rightskip}{0pt plus 5cm}float transx = 0}\hypertarget{src_2main_8cpp_a15b95adbbd613e2d9fde8dbebe324811}{}\label{src_2main_8cpp_a15b95adbbd613e2d9fde8dbebe324811}
+
+
+Definition at line 10 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!transy@{transy}}
+\index{transy@{transy}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{transy}{transy}}]{\setlength{\rightskip}{0pt plus 5cm}float transy = 0}\hypertarget{src_2main_8cpp_a9903321d40b0ea39b3eb992b0ef716ee}{}\label{src_2main_8cpp_a9903321d40b0ea39b3eb992b0ef716ee}
+
+
+Definition at line 10 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!transz@{transz}}
+\index{transz@{transz}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{transz}{transz}}]{\setlength{\rightskip}{0pt plus 5cm}float transz = 0}\hypertarget{src_2main_8cpp_af3eff2bceab47fbaf2707aba16c9355b}{}\label{src_2main_8cpp_af3eff2bceab47fbaf2707aba16c9355b}
+
+
+Definition at line 10 of file main.\+cpp.
+
+\index{src/main.\+cpp@{src/main.\+cpp}!w@{w}}
+\index{w@{w}!src/main.\+cpp@{src/main.\+cpp}}
+\subsubsection[{\texorpdfstring{w}{w}}]{\setlength{\rightskip}{0pt plus 5cm}int w =1000}\hypertarget{src_2main_8cpp_aac374e320caaadeca4874add33b62af2}{}\label{src_2main_8cpp_aac374e320caaadeca4874add33b62af2}
+
+
+Definition at line 11 of file main.\+cpp.
+
