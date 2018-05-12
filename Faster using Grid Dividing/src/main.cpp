@@ -12,7 +12,7 @@ int w=1000,h=1000;
 int ta = 0;
 int qw = 0;
 
-std::vector<boid> v(900);
+std::vector<boid> v;
 clock_t time_now;
 double start;
 tuple avg_force;
@@ -108,7 +108,10 @@ void display(void)
         v[i].position = v[i].position + v[i].velocity;
         avg_velocity = avg_velocity + v[i].velocity;
         ke1 = v[i].velocity.magnitude();
-        KE +=  ke1 * ke1;
+        // std::cout<<v[i].velocity.x<<' '<<v[i].velocity.y<<' '<<v[i].velocity.z<<'\n';
+        KE +=  ((ke1 * ke1) * 0.07) / (2.0 * v.size());
+        // std::cout<<ke1<<'\n';
+        // std::cout<<"K! "<<KE<<'\n';
 
         tuple v1,v2,v3,v4,tmp,vel,vel1,vel2,vel3;
         vel = v[i].velocity;
@@ -171,14 +174,14 @@ void display(void)
         glEnd();
     }
     avg_velocity = avg_velocity * (1.0/v.size());
-    KE /= 2.0 * v.size();
-    KE *= 70.0/1000.0;
+    // KE /= 2.0;
+    // KE *= 70.0/1000.0;
 
     // std::cout<<std::setprecision(25);
-    std::cout<<"avg_velocity -> "<<avg_velocity.x<<"i + "<<avg_velocity.y<<"j + "<<avg_velocity.z<<"k\n";
-    std::cout<<"avg_force -> "<<avg_force.x<<"i + "<<avg_force.y<<"j + "<<avg_force.z<<"k\n";
+    // std::cout<<"avg_velocity -> "<<avg_velocity.x<<"i + "<<avg_velocity.y<<"j + "<<avg_velocity.z<<"k\n";
+    // std::cout<<"avg_force -> "<<avg_force.x<<"i + "<<avg_force.y<<"j + "<<avg_force.z<<"k\n";
 
-    std::cout<<"KE "<<KE<<'\n';
+    // std::cout<<"KE "<<KE<<'\n';
     
     time_now = clock();
     double period = time_now - start;
@@ -307,6 +310,10 @@ void go(int a)
 
 int main(int argc, char** argv)
 {
+    for(int i=0;i<NO_OF_BOIDS;i++){
+        boid new_boid;
+        v.pb(new_boid);
+    }
     time_now = clock();
     start = time_now;
     glutInit(&argc, argv);

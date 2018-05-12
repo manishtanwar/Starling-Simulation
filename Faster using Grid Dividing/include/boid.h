@@ -1,17 +1,18 @@
 #ifndef BOID_H
 #define BOID_H
 
-#define Xmin -250.0
-#define Xmax 250.0
-#define Ymin -250.0
-#define Ymax 250.0
-#define Zmin -250.0
-#define Zmax 250.0
+#define Xmin -240.0
+#define Xmax 240.0
+#define Ymin -240.0
+#define Ymax 240.0
+#define Zmin -240.0
+#define Zmax 240.0
 
 #define vel_MAX 10.00
 #define vel_MIN -10.00
 #define pb push_back
 #define freq_pankh 3
+#define NO_OF_BOIDS 2500
 
 float random_float(int mi,int mx);
 
